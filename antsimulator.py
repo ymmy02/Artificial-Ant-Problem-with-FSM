@@ -73,3 +73,15 @@ class AntSimulator(object):
         self.matrix_row = len(self.matrix)
         self.matrix_col = len(self.matrix[0])
         self.matrix_exc = copy.deepcopy(self.matrix)
+
+    def print_route(self):
+        for row in self.matrix_exc:
+            line = list()
+            for col in row:
+                if col == "food":
+                    line.append("#")
+                elif col == "empty":
+                    line.append(".")
+                elif col == "passed":
+                    line.append("*")
+            print(''.join(line))
