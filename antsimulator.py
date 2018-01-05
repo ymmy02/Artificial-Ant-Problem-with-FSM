@@ -10,6 +10,7 @@ class AntSimulator(object):
         self.max_moves = max_moves
         self.moves = 0
         self.eaten = 0
+        self.allfoods = 0
         self.routine = None
         
     def _reset(self):
@@ -63,6 +64,7 @@ class AntSimulator(object):
             for j, col in enumerate(line):
                 if col == "#":
                     self.matrix[-1].append("food")
+                    self.allfoods += 1
                 elif col == ".":
                     self.matrix[-1].append("empty")
                 elif col == "S":

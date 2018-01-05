@@ -1,7 +1,8 @@
 from enums import InputSymbol, OutputSymbol
 
 def run_with_fsm(antsimulator, mealymachine):
-    while antsimulator.moves < antsimulator.max_moves:
+    while antsimulator.moves < antsimulator.max_moves and  \
+            antsimulator.eaten < antsimulator.allfoods:
         input_ = InputSymbol.FOUND if    \
                 antsimulator.sense_food() else InputSymbol.NOTFOUND
         output = mealymachine.input_(input_)
