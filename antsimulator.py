@@ -85,3 +85,16 @@ class AntSimulator(object):
                 elif col == "passed":
                     line.append("*")
             print(''.join(line))
+
+    def write_route(self, filename):
+        with open(filename, 'w') as outputfile:
+            for row in self.matrix_exc:
+                line = list()
+                for col in row:
+                    if col == "food":
+                        line.append("#")
+                    elif col == "empty":
+                        line.append(".")
+                    elif col == "passed":
+                        line.append("*")
+                outputfile.write(''.join(line) + "\n")

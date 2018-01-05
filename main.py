@@ -45,6 +45,7 @@ def main():
     fitness = run_with_fsm(ant, mm)
     print(fitness)
     ant.print_route()
+    ant.write_route("route.txt")
 
 if __name__ == "__main__":
     main()
